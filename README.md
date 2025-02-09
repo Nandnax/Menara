@@ -1,8 +1,19 @@
+# NANDANA VS TEAM 🎯
+
+
+## Basic Details
+### Team Name: NANDANA V S
+
+
+
+### Hosted Project Link
+[mention your project hosted project link here]
+
+### Project Description
 # Menara
 (A fusion of Menstruation and Ayara (Thai for cure).)
 
 Menara is a web-based application designed to help users track their menstrual cycle, access a chatbot for menstrual health queries, and generate homemade remedies for menstrual discomfort.
-
 Features
 
 Chatbot: A friendly AI chatbot to answer menstrual health-related questions.
@@ -15,22 +26,68 @@ Music: Listen to random music.
 
 Interactive UI: Engaging design with animations and intuitive navigation.
 
-Technologies Used
 
+### The Problem statement
+Women alone at home who needs access t homemade remedies
+
+### The Solution
+A fun chatbot for them to ask anything related to menstruation.
+
+## Technical Details
+### Technologies/Components Used
+For Software:
 Frontend: HTML, CSS, JavaScript
 
 Backend: Flask (Python)
 
 APIs: OpenAI for chatbot integration
 
+### Implementation
+For Software:
+Installation and Setup
+
+Clone the Repository:
+
+git clone https://github.com/yourusername/menara.git
+cd menara
+
+Set Up a Virtual Environment (Optional but Recommended):
+
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+Install Dependencies:
+
+pip install -r requirements.txt
+
+Run the Application:
+
+flask run
+
+The app will be available at http://127.0.0.1:5000/
+### Project Documentation
+For Software:
+
 ![Menara Logo](images/landing.png)
 ![Menara Logo](images/music.png)
 ![Menara Logo](images/chatbot.png)
 ![Menara Logo](images/tracker.png)
 
-WATCH THE VIDEO HERE
-[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/GGuFkiQv35s)
 
 
 
+![Final](Add photo of final product here)
+*Explain the final build*
 
+### Project Demo
+# Video
+[https://youtu.be/GGuFkiQv35s]
+*The video shows a go through of the website
+
+
+
+## Team Contributions
+done and documented by NANDANA VS
+
+---
+Made with ❤️ at TinkerHub
