@@ -1,39 +1,46 @@
-# [Project Name] 🎯
+# NANDANA VS TEAM 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: NANDANA V S
 
 
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+# Menara
+(A fusion of Menstruation and Ayara (Thai for cure).)
+
+Menara is a web-based application designed to help users track their menstrual cycle, access a chatbot for menstrual health queries, and generate homemade remedies for menstrual discomfort.
+Features
+
+Chatbot: A friendly AI chatbot to answer menstrual health-related questions.
+
+Period Tracker: Users can input their last period date to estimate their next cycle.
+
+Homemade Remedies Generator: Provides natural remedies based on symptoms.
+
+Music: Listen to random music.
+
+Interactive UI: Engaging design with animations and intuitive navigation.
+
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Women alone at home who needs access t homemade remedies
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+A fun chatbot for them to ask anything related to menstruation.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+Frontend: HTML, CSS, JavaScript
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+Backend: Flask (Python)
+
+APIs: OpenAI for chatbot integration
 
 ### Implementation
 For Software:
@@ -46,54 +53,26 @@ For Software:
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Team](Add photo of your team here)
+![Menara Logo](images/landing.png)
+![Menara Logo](images/music.png)
+![Menara Logo](images/chatbot.png)
+![Menara Logo](images/tracker.png)
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
 
 ![Final](Add photo of final product here)
 *Explain the final build*
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[https://youtu.be/GGuFkiQv35s]
+*The video shows a go through of the website
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+done and documented by NANDANA VS
 
 ---
 Made with ❤️ at TinkerHub
