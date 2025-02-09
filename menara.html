@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menara - Your Guide to Natural Menstrual Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Instrument, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFFF99;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+        }
+
+        section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .content-wrapper {
+            background-color: #FF69B4;
+            width: 90%;
+            max-width: 900px;
+            margin: 20px;
+            padding: 40px;
+            border: 2px solid black;
+            outline: 15px solid #FFFF99;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero-content {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 4em;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            background-color: #FFFF99;
+            padding: 15px 30px;
+            display: inline-block;
+            margin: 30px auto;
+            box-shadow: 4px 4px 0 #000;
+            font-weight: bold;
+            font-size: 1.5em;
+            border: 2px solid black;
+        }
+
+        .scroll-prompt {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #FF1493;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-30px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-15px) translateX(-50%);
+            }
+        }
+
+        
+        .chat-prompt {
+            font-size: 1.8em;
+            margin: 20px 0;
+            font-style: italic;
+            background-color: #FFFF99;
+            padding: 15px 30px;
+            display: inline-block;
+            border: 2px solid black;
+            box-shadow: 4px 4px 0 #000;
+            font-weight: bold;
+        }
+
+        .chat-prompt-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            margin: 20px 0;
+            padding: 20px;
+            background-color:#FF69B4;
+            border-radius: 10px;
+            min-height: 300px;
+            max-height: 50vh;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-line;
+        }
+
+        .message {
+           
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+
+        .user-message {
+            background-color: #FFFF99;
+            color: black;
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background-color: white;
+            margin-right: auto;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            background-color: #FFFF99;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #FFFF99;
+            color: black;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        button:hover {
+            background-color: #FFEB3B;
+            transform: translateY(2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        .music-container {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .music-button {
+        background-color: #FFFF99;
+        padding: 15px 30px;
+        border: 2px solid black;
+        box-shadow: 4px 4px 0 #000;
+        font-size: 1.2em;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .music-button:hover {
+        transform: translateY(2px);
+        box-shadow: 2px 2px 0 #000;
+    }
+
+    .music-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .tracker-section {
+    padding: 20px 0;
+}
+
+.calendar-container {
+    background-color: #FF69B4;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 2px solid black;
+    outline: 15px solid #FFFF99;
+}
+
+.tracker-title {
+    background-color: #FFFF99;
+    padding: 15px 30px;
+    display: inline-block;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 #000;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    background-color: #FFFF99;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 #000;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.calendar {
+    background-color: #FFFF99;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: white;
+}
+
+.calendar-day.period {
+    background-color: #FF69B4;
+    color: white;
+}
+
+.calendar-day.predicted {
+    background-color: #FFB6C1;
+    color: black;
+}
+
+.calendar-day.today {
+    border: 2px solid #000;
+    font-weight: bold;
+}
+
+.day-header {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #FF69B4;
+    color: white;
+}
+
+input[type="date"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 #000;
+    background-color: white;
+}
+
+.legend {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+.flower-container {
+    position: fixed;
+    bottom: 20px; /* Adjust to move up/down */
+    width: 100px;
+    height: 100px;
+}
+
+.left {
+    left: 20px; /* Places flower on the bottom-left */
+}
+
+.right {
+    right: 20px; /* Places flower on the bottom-right */
+}
+
+.rotating-flower {
+    width: 100%;
+    height: auto;
+    animation: rotateFlower 10s linear infinite; /* Smooth continuous rotation */
+}
+
+@keyframes rotateFlower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .calendar-day {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+    
+    .legend {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+        @media (max-width: 768px) {
+            .languages {
+                font-size: 2.5em;
+                gap: 15px;
+                flex-direction: column;
+            }
+
+            .content-wrapper {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+
+            .messages {
+                max-height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flower-container left">
+        <img src="C:\Users\Nandana V S\Downloads\Group 4.png" alt="Rotating Flower" class="rotating-flower">
+    </div>
+    
+    <div class="flower-container right">
+        <img src="C:\Users\Nandana V S\Downloads\Group 4.png" alt="Rotating Flower" class="rotating-flower">
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content-wrapper">
+            <div class="hero-content">
+                <div class="languages">
+                    <span>മെനാറ</span>
+                    <span>Menara</span>
+                    <span>นราธิวาส</span>
+                </div>
+                
+                <div class="subtitle">
+                    Your Guide to Natural Menstrual Care
+                </div>
+
+                <div class="scroll-prompt" onclick="document.querySelector('.chatbot').scrollIntoView({behavior: 'smooth'})">
+                    Scroll down to chat ↓
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="music-container">
+        <a href="https://www.youtube.com/watch?v=6OkneaH-eTA&list=PL8ZvH8vDT3w62GS0pCeFN95dkG4PbRnyU" 
+           target="_blank" 
+           class="music-button">
+            <svg class="music-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+            Listen to Music
+        </a>
+    </div>
+    <!-- Chatbot Section -->
+    <section class="chatbot">
+        <div class="content-wrapper">
+            <div class="chat-prompt-container">
+                <div class="chat-prompt">
+                    Ask me besties!
+                </div>
+            </div>
+
+            <div class="messages" id="messages">
+                <div class="message bot-message">
+                    Hi bestie! 👋 I'm here to help you with natural menstrual care advice. What would you like to know?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" 
+                       id="userInput" 
+                       placeholder="Type your question here..."
+                       onkeypress="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Ask</button>
+            </div>
+        </div>
+    </section>
+    <section class="tracker-section">
+        <div class="calendar-container">
+            <div style="text-align: center;">
+                <div class="tracker-title">Period Tracker</div>
+            </div>
+    
+            <div class="input-section">
+                <h2 style="margin-bottom: 10px;">Track Your Cycle</h2>
+                <p style="margin-bottom: 10px;">Enter your last period start date:</p>
+                <input type="date" id="lastPeriodDate">
+                <button onclick="trackPeriod()">Track</button>
+            </div>
+    
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button onclick="previousMonth()">&lt; Previous</button>
+                    <h2 id="currentMonth">September 2023</h2>
+                    <button onclick="nextMonth()">Next &gt;</button>
+                </div>
+    
+                <div class="calendar-grid" id="calendarGrid"></div>
+    
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #FF69B4;"></div>
+                        <span>Period Days</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #FFB6C1;"></div>
+                        <span>Predicted Days</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: white;"></div>
+                        <span>Regular Days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const API_KEY = "AIzaSyDT_n5zHD_25mKqunx542n6aTvhZPB0JP4"; 
+        const messagesDiv = document.getElementById('messages');
+        const inputField = document.getElementById('userInput');
+    
+        function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+    messageDiv.innerHTML = text
+        .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")  // Bold
+        .replace(/\*(.*?)\*/g, "<i>$1</i>");     // Italics
+    messagesDiv.appendChild(messageDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+    
+        async function sendMessage() {
+    const input = document.getElementById('userInput');
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    addMessage(message, true);
+    input.value = '';
+
+    try {
+        const response = await fetch("http://localhost:5000/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message }),
+        });
+
+        const data = await response.json();
+        addMessage(data.reply || "Oops! Something went wrong.");
+    } catch (error) {
+        console.error("Error:", error);
+        addMessage("I'm having trouble responding right now. Try again later.");
+    }
+}
+
+
+        
+    
+        inputField.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") sendMessage();
+        });
+        let currentDate = new Date();
+let periodStartDate = null;
+const CYCLE_LENGTH = 28; // Average cycle length
+const PERIOD_LENGTH = 5; // Average period length
+
+function initCalendar() {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                      "July", "August", "September", "October", "November", "December"];
+    
+    document.getElementById('currentMonth').textContent = 
+        `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+
+    const grid = document.getElementById('calendarGrid');
+    grid.innerHTML = '';
+
+    // Add day headers
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    days.forEach(day => {
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'day-header';
+        dayHeader.textContent = day;
+        grid.appendChild(dayHeader);
+    });
+
+    // Get first day of month and total days
+    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+    const totalDays = lastDay.getDate();
+
+    // Add empty cells for days before start of month
+    for (let i = 0; i < firstDay.getDay(); i++) {
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'calendar-day';
+        grid.appendChild(emptyDay);
+    }
+
+    // Add days of month
+    for (let day = 1; day <= totalDays; day++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'calendar-day';
+        dayCell.textContent = day;
+
+        const currentDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+        
+        if (isToday(currentDay)) {
+            dayCell.classList.add('today');
+        }
+        
+        if (periodStartDate && isPeriodDay(currentDay)) {
+            dayCell.classList.add('period');
+        }
+        
+        if (periodStartDate && isPredictedPeriodDay(currentDay)) {
+            dayCell.classList.add('predicted');
+        }
+
+        grid.appendChild(dayCell);
+    }
+}
+
+function isToday(date) {
+    const today = new Date();
+    return date.getDate() === today.getDate() &&
+           date.getMonth() === today.getMonth() &&
+           date.getFullYear() === today.getFullYear();
+}
+
+function isPeriodDay(date) {
+    if (!periodStartDate) return false;
+    
+    const diffTime = Math.abs(date - periodStartDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    return (diffDays % CYCLE_LENGTH) < PERIOD_LENGTH;
+}
+
+function isPredictedPeriodDay(date) {
+    if (!periodStartDate) return false;
+    
+    const diffTime = Math.abs(date - periodStartDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    const dayInCycle = diffDays % CYCLE_LENGTH;
+    
+    return date > new Date() && dayInCycle < PERIOD_LENGTH;
+}
+
+function trackPeriod() {
+    const dateInput = document.getElementById('lastPeriodDate');
+    if (dateInput.value) {
+        periodStartDate = new Date(dateInput.value);
+        initCalendar();
+        
+        localStorage.setItem('lastPeriodDate', periodStartDate.toISOString());
+    }
+}
+
+function previousMonth() {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    initCalendar();
+}
+
+function nextMonth() {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    initCalendar();
+}
+
+// Initialize calendar on page load
+window.addEventListener('load', function() {
+    const savedDate = localStorage.getItem('lastPeriodDate');
+    if (savedDate) {
+        periodStartDate = new Date(savedDate);
+        document.getElementById('lastPeriodDate').value = savedDate.split('T')[0];
+    }
+    initCalendar();
+});
+    </script>
+    
+</body>
+</html>
