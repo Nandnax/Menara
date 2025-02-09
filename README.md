@@ -44,12 +44,27 @@ APIs: OpenAI for chatbot integration
 
 ### Implementation
 For Software:
-# Installation
-[commands]
+Installation and Setup
 
-# Run
-[commands]
+Clone the Repository:
 
+git clone https://github.com/yourusername/menara.git
+cd menara
+
+Set Up a Virtual Environment (Optional but Recommended):
+
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+Install Dependencies:
+
+pip install -r requirements.txt
+
+Run the Application:
+
+flask run
+
+The app will be available at http://127.0.0.1:5000/
 ### Project Documentation
 For Software:
 
